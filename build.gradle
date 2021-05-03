@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.4.5'
+        springBootVersion = '2.4.3'
     }
     repositories {
         mavenCentral()
@@ -25,13 +25,13 @@ repositories {
 }
 
 ext {
-    springCloudVersion = 'Edgware.SR2'
+    set('springCloudVersion', "2020.0.2")
 }
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.cloud:spring-cloud-starter-config')
-    compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+    implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
     testCompile('org.springframework.boot:spring-boot-starter-test'){
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
